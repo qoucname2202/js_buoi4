@@ -14,6 +14,7 @@ buttons.forEach((item, idx) => {
 // Exercise 1: Sort 3 numbers in ascending order
 // Function sorting using if/else
 function sorting(a, b, c) {
+	// Check condition a, b,c
 	if (a < 0 || b < 0 || c < 0) {
 		Swal.fire({
 			position: 'center',
@@ -42,7 +43,7 @@ document.getElementById('btnSorting').addEventListener('click', e => {
 	e.preventDefault();
 	const numb01 = +document.getElementById('numb01').value;
 	const numb02 = +document.getElementById('numb02').value;
-	const numb03 = document.getElementById('numb03').value;
+	const numb03 = +document.getElementById('numb03').value;
 	const formSorting = document.getElementById('formSorting');
 	const value = sorting(numb01, numb02, numb03);
 	const result = document.querySelector('.showSorting');
@@ -51,7 +52,7 @@ document.getElementById('btnSorting').addEventListener('click', e => {
 	setTimeout(() => {
 		formSorting.reset();
 		result.innerText = '';
-	}, 7000);
+	}, 5000);
 });
 
 // Exercise 2: Greeting program

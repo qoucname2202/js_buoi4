@@ -82,7 +82,7 @@ input:focus {
 }
 .button {
 	color: #f9f9f9;
-	padding: 15px 40px;
+	padding: 13px 40px;
 	border-radius: 30px;
 	background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
 	background-size: 200% 100%;
@@ -93,7 +93,7 @@ input:focus {
 	line-height: 24px;
 	outline: none;
 	border: none;
-	font-size: 18px;
+	font-size: 16px;
 	box-shadow: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5) 0px
 		8px 24px;
 }
@@ -116,4 +116,19 @@ input:focus {
 ::placeholder {
 	color: #b2b2b2;
 	opacity: 1;
+}
+.form-control {
+	margin-top: 8px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	outline: none;
+	font-size: 17px;
+	border-color: #743ad5;
+}
+.text-style {
+	font-size: 20px;
+	color: #3cf0c5;
+	font-weight: 600;
+	background: -webkit-linear-gradient(-45deg, #ffa63d, #ff3d77);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }

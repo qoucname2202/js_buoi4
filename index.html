@@ -7,6 +7,7 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1, shrink-to-fit=no"
 		/>
+		<link rel="shortcut icon" href="./images/js_icon.png" type="image/x-icon" />
 		<!-- Google font -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,7 +52,7 @@
 						aria-orientation="vertical"
 					>
 						<button
-							class="nav-link active mb-3"
+							class="nav-link active mb-2"
 							id="v-pills-bai1-tab"
 							data-toggle="pill"
 							data-target="#v-pills-bai1"
@@ -63,7 +64,7 @@
 							<span class="icon">📒</span>Bài 1
 						</button>
 						<button
-							class="nav-link mb-3"
+							class="nav-link mb-2"
 							id="v-pills-bai2-tab"
 							data-toggle="pill"
 							data-target="#v-pills-bai2"
@@ -75,7 +76,7 @@
 							<span class="icon">📒</span>Bài 2
 						</button>
 						<button
-							class="nav-link mb-3"
+							class="nav-link mb-2"
 							id="v-pills-bai3-tab"
 							data-toggle="pill"
 							data-target="#v-pills-bai3"
@@ -87,7 +88,7 @@
 							<span class="icon">📒</span>Bài 3
 						</button>
 						<button
-							class="nav-link mb-3"
+							class="nav-link mb-2"
 							id="v-pills-bai4-tab"
 							data-toggle="pill"
 							data-target="#v-pills-bai4"
@@ -99,7 +100,7 @@
 							<span class="icon">📒</span>Bài 4
 						</button>
 						<button
-							class="nav-link mb-3"
+							class="nav-link mb-2"
 							id="v-pills-bai5-tab"
 							data-toggle="pill"
 							data-target="#v-pills-bai5"
@@ -111,7 +112,7 @@
 							<span class="icon">📒</span>Bài 5
 						</button>
 						<button
-							class="nav-link mb-3"
+							class="nav-link mb-2"
 							id="v-pills-bai6-tab"
 							data-toggle="pill"
 							data-target="#v-pills-bai6"
@@ -123,7 +124,7 @@
 							<span class="icon">📒</span>Bài 6
 						</button>
 						<button
-							class="nav-link mb-3"
+							class="nav-link mb-2"
 							id="v-pills-bai7-tab"
 							data-toggle="pill"
 							data-target="#v-pills-bai7"
@@ -135,7 +136,7 @@
 							<span class="icon">📒</span>Bài 7
 						</button>
 						<button
-							class="nav-link mb-3"
+							class="nav-link mb-2"
 							id="v-pills-bai8-tab"
 							data-toggle="pill"
 							data-target="#v-pills-bai8"
@@ -197,7 +198,7 @@
 													autocomplete="off"
 													type="number"
 													id="numb01"
-													placeholder="Số thứ nhất"
+													placeholder="Nhập số thứ nhất"
 												/>
 											</div>
 										</div>
@@ -210,7 +211,7 @@
 													autocomplete="off"
 													type="number"
 													id="numb02"
-													placeholder="Số thứ hai"
+													placeholder="Nhập số thứ hai"
 												/>
 											</div>
 										</div>
@@ -223,7 +224,7 @@
 													autocomplete="off"
 													type="number"
 													id="numb03"
-													placeholder="Số thứ ba"
+													placeholder="Nhập số thứ ba"
 												/>
 											</div>
 										</div>
@@ -245,32 +246,382 @@
 							id="v-pills-bai2"
 							role="tabpanel"
 							aria-labelledby="v-pills-bai2-tab"
-						></div>
+						>
+							<h4 class="mb-3 text-warning">👋 Chương trình "Chào hỏi"</h4>
+							<div class="bd-callout mb-4 bg-white">
+								💡 Mô hình 3 khối
+								<ol>
+									<li>
+										Đầu vào
+										<ul>
+											<li>Chọn</li>
+										</ul>
+									</li>
+									<li>
+										Xử lý
+										<ul>
+											<li>TH1:</li>
+										</ul>
+									</li>
+									<li>
+										Đầu ra
+										<ul>
+											<li>Xuất lời chào hỏi</li>
+										</ul>
+									</li>
+								</ol>
+							</div>
+							<form id="formIntroduce">
+								<div class="row">
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<select class="form-control" id="formSelected">
+												<option value="">Chọn thành viên</option>
+												<option value="father">Cha</option>
+												<option value="mother">Mẹ</option>
+												<option value="brother">Anh Trai</option>
+												<option value="sister">Em Gái</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<button class="button" type="submit" id="btnIntroduce">
+											Gửi lời chào
+										</button>
+									</div>
+								</div>
+							</form>
+							<div class="alert alert-success mt-4" role="alert">
+								<i class="fa-solid fa-hand-point-right icon-res"></i>
+								<span class="showInstroduce mess"></span>
+							</div>
+						</div>
 						<div
 							class="tab-pane fade"
 							id="v-pills-bai3"
 							role="tabpanel"
 							aria-labelledby="v-pills-bai3-tab"
-						></div>
+						>
+							<h4 class="mb-3 text-warning">🧮 Đếm số chẵn lẻ</h4>
+							<div class="bd-callout mb-4 bg-white">
+								💡 Mô hình 3 khối
+								<ol>
+									<li>
+										Đầu vào
+										<ul>
+											<li>Nhập vào 3 số</li>
+										</ul>
+									</li>
+									<li>
+										Xử lý
+										<ul>
+											<li>TH1:</li>
+										</ul>
+									</li>
+									<li>
+										Đầu ra
+										<ul>
+											<li>Hiển thị số lượng số chẵn, số lượng số lẻ</li>
+										</ul>
+									</li>
+								</ol>
+							</div>
+							<form id="formCounting">
+								<div class="row">
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="numb1">Số thứ nhất</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="numb1"
+													placeholder="Nhập số thứ nhất"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="numb2">Số thứ hai</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="numb2"
+													placeholder="Nhập số thứ hai"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="numb3">Số thứ ba</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="numb3"
+													placeholder="Nhập số thứ ba"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12">
+										<button class="button" type="submit" id="btnCounting">
+											Đếm
+										</button>
+									</div>
+								</div>
+							</form>
+							<div class="alert alert-success mt-4" role="alert">
+								<i class="fa-solid fa-hand-point-right icon-res"></i>
+								<span class="showCounting mess"></span>
+							</div>
+						</div>
 						<div
 							class="tab-pane fade"
 							id="v-pills-bai4"
 							role="tabpanel"
 							aria-labelledby="v-pills-bai4-tab"
-						></div>
+						>
+							<h4 class="mb-3 text-warning">🔮 Đoán hình tam giác</h4>
+							<div class="bd-callout mb-4 bg-white">
+								💡 Mô hình 3 khối
+								<ol>
+									<li>
+										Đầu vào
+										<ul>
+											<li>Nhập vào độ dài 3 cạnh của hình tam giác</li>
+										</ul>
+									</li>
+									<li>
+										Xử lý
+										<ul>
+											<li>TH1:</li>
+										</ul>
+									</li>
+									<li>
+										Đầu ra
+										<ul>
+											<li>Hiển thị tam giác đó thuộc loại tam giác nào!</li>
+										</ul>
+									</li>
+								</ol>
+							</div>
+							<form id="formCounting">
+								<div class="row">
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="side01">Cạnh thứ nhất</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="side01"
+													placeholder="Nhập cạnh thứ nhất"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="side02">Cạnh thứ hai</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="side02"
+													placeholder="Nhập cạnh thứ hai"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="side03">Cạnh thứ ba</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="side03"
+													placeholder="Nhập cạnh thứ ba"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12">
+										<button class="button" type="submit" id="btnGuess">
+											Dự đoán
+										</button>
+									</div>
+								</div>
+							</form>
+							<div class="alert alert-success mt-4" role="alert">
+								<i class="fa-solid fa-hand-point-right icon-res"></i>
+								<span class="showGuess mess"></span>
+							</div>
+						</div>
 						<div
 							class="tab-pane fade"
 							id="v-pills-bai5"
 							role="tabpanel"
 							aria-labelledby="v-pills-bai5-tab"
-						></div>
+						>
+							<h4 class="mb-3 text-warning">📅 Tính ngày tháng năm</h4>
+							<div class="bd-callout mb-4 bg-white">
+								💡 Mô hình 3 khối
+								<ol>
+									<li>
+										Đầu vào
+										<ul>
+											<li>Nhập vào ngày, tháng, năm</li>
+										</ul>
+									</li>
+									<li>
+										Xử lý
+										<ul>
+											<li>TH1:</li>
+										</ul>
+									</li>
+									<li>
+										Đầu ra
+										<ul>
+											<li>
+												Hiển thị ngày hôm qua hoặc hiển thị ngày mai tùy theo
+												người dùng click chọn
+											</li>
+										</ul>
+									</li>
+								</ol>
+							</div>
+							<form id="formCounting">
+								<div class="row">
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="day">Ngày</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="day"
+													placeholder="Nhập Ngày"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="month">Tháng</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="month"
+													placeholder="Nhập Tháng"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="year">Năm</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="year"
+													placeholder="Nhập Năm"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-12">
+										<button class="button" type="submit" id="btnPrevDate">
+											Ngày hôm qua
+										</button>
+									</div>
+									<div class="col-lg-8 col-12 mt-lg-0 mt-2">
+										<button class="button" type="submit" id="btnNextDate">
+											Ngày mai
+										</button>
+									</div>
+								</div>
+							</form>
+							<div class="alert alert-success mt-4" role="alert">
+								<i class="fa-solid fa-hand-point-right icon-res"></i>
+								<span class="showDate mess"></span>
+							</div>
+						</div>
 						<div
 							class="tab-pane fade"
 							id="v-pills-bai6"
 							role="tabpanel"
 							aria-labelledby="v-pills-bai6-tab"
 						>
-							Bài 6
+							<h4 class="mb-3 text-warning">📅 Tính ngày</h4>
+							<div class="bd-callout mb-4 bg-white">
+								💡 Mô hình 3 khối
+								<ol>
+									<li>
+										Đầu vào
+										<ul>
+											<li>Nhập vào tháng, năm</li>
+										</ul>
+									</li>
+									<li>
+										Xử lý
+										<ul>
+											<li>TH1:</li>
+										</ul>
+									</li>
+									<li>
+										Đầu ra
+										<ul>
+											<li>Hiển thị số ngày theo từng tháng, năm</li>
+										</ul>
+									</li>
+								</ol>
+							</div>
+							<form id="formCounting">
+								<div class="row">
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="month">Tháng</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="month"
+													placeholder="Nhập Tháng"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="year">Năm</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="year"
+													placeholder="Nhập Năm"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<button class="button" type="submit" id="btnCalcDay">
+											Tính ngày
+										</button>
+									</div>
+								</div>
+							</form>
+							<div class="alert alert-success mt-4" role="alert">
+								<i class="fa-solid fa-hand-point-right icon-res"></i>
+								<span class="showDay mess"></span>
+							</div>
 						</div>
 						<div
 							class="tab-pane fade"
@@ -278,7 +629,56 @@
 							role="tabpanel"
 							aria-labelledby="v-pills-bai7-tab"
 						>
-							Bài 7
+							<h4 class="mb-3 text-warning">🔢 Đọc số</h4>
+							<div class="bd-callout mb-4 bg-white">
+								💡 Mô hình 3 khối
+								<ol>
+									<li>
+										Đầu vào
+										<ul>
+											<li>Nhập vào 3 số</li>
+										</ul>
+									</li>
+									<li>
+										Xử lý
+										<ul>
+											<li>TH1:</li>
+										</ul>
+									</li>
+									<li>
+										Đầu ra
+										<ul>
+											<li>Hiển thị các đoc số nguyên vừa nhập</li>
+										</ul>
+									</li>
+								</ol>
+							</div>
+							<form id="formCounting">
+								<div class="row">
+									<div class="col-12 col-lg-6">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="numb">Số nguyên</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="numb"
+													placeholder="Nhập số 3 chữ số"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-6">
+										<button class="button" type="submit" id="btnReadNumber">
+											Đọc số
+										</button>
+									</div>
+								</div>
+							</form>
+							<div class="alert alert-success mt-4" role="alert">
+								<i class="fa-solid fa-hand-point-right icon-res"></i>
+								<span class="showReadNumber mess"></span>
+							</div>
 						</div>
 						<div
 							class="tab-pane fade"
@@ -286,7 +686,215 @@
 							role="tabpanel"
 							aria-labelledby="v-pills-bai8-tab"
 						>
-							Bài 8
+							<h4 class="mb-3 text-warning">🗺️ Tìm sinh viên xa trường nhất</h4>
+							<div class="bd-callout mb-4 bg-white">
+								💡 Mô hình 3 khối
+								<ol>
+									<li>
+										Đầu vào
+										<ul>
+											<li>Nhập vào</li>
+										</ul>
+									</li>
+									<li>
+										Xử lý
+										<ul>
+											<li>TH1:</li>
+										</ul>
+									</li>
+									<li>
+										Đầu ra
+										<ul>
+											<li>Hiển thị thông tin sinh viên xa trường nhất</li>
+										</ul>
+									</li>
+								</ol>
+							</div>
+							<form id="formCounting">
+								<!-- First student coordinates -->
+								<div class="row">
+									<div class="col-12 mb-3">
+										👨‍🎓
+										<span class="text-style"> Sinh viên thứ 1</span>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="name1">Tên sinh viên</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="name1"
+													placeholder="Nhập tên"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="x1">Tọa độ X</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="x1"
+													placeholder="Nhập tọa độ x"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="y1">Tọa độ Y</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="y1"
+													placeholder="Nhập tọa độ y"
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Second student coordinates -->
+								<div class="row">
+									<div class="col-12 mb-3">
+										👨‍🎓
+										<span class="text-style">Sinh viên thứ 2</span>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="name2">Tên sinh viên</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="name2"
+													placeholder="Nhập tên"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="x2">Tọa độ X</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="x2"
+													placeholder="Nhập tọa độ x"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="y2">Tọa độ Y</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="y2"
+													placeholder="Nhập tọa độ y"
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Third student coordinates -->
+								<div class="row">
+									<div class="col-12 mb-3">
+										👨‍🎓
+										<span class="text-style">Sinh viên thứ 3</span>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="name3">Tên sinh viên</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="name3"
+													placeholder="Nhập tên"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="x3">Tọa độ X</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="x3"
+													placeholder="Nhập tọa độ x"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="y3">Tọa độ Y</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="y3"
+													placeholder="Nhập tọa độ y"
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- School Coordinates -->
+								<div class="row">
+									<div class="col-12 mb-3">
+										🏫
+										<span class="text-style">Trường học</span>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="schoolX">Tọa độ X</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="schoolX"
+													placeholder="Nhập tọa độ x"
+												/>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="form-group">
+											<div class="text-field">
+												<label for="schoolY">Tọa độ Y</label>
+												<input
+													autocomplete="off"
+													type="number"
+													id="schoolY"
+													placeholder="Nhập tọa độ Y"
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Button Find Distance Max -->
+								<div class="row">
+									<div class="col-12">
+										<button class="button" type="submit" id="btnFindDistance">
+											Tìm kiếm
+										</button>
+									</div>
+								</div>
+							</form>
+							<div class="alert alert-success mt-4" role="alert">
+								<i class="fa-solid fa-hand-point-right icon-res"></i>
+								<span class="showFind mess"></span>
+							</div>
 						</div>
 					</div>
 				</div>
