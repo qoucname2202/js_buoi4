@@ -145,6 +145,64 @@ document.getElementById('btnCounting').addEventListener('click', e => {
 	}, 5000);
 });
 // Exercise 4: Guess the triagle
+function isIsoscelesTriangle(a, b, c) {
+	if (a === b && a !== c && b !== c) {
+		return true;
+	} else if (b === c && b !== a && c !== a) {
+		return true;
+	} else if (c === a && a !== b && c !== b) {
+		return true;
+	}
+	return false;
+}
+function rightTriagle(a, b, c) {
+	if (c ** 2 === a ** 2 + b ** 2) {
+		return true;
+	} else if (b ** 2 === a ** 2 + c ** 2) {
+		return true;
+	} else if (a ** 2 === c ** 2 + b ** 2) {
+		return true;
+	}
+	return false;
+}
+function guessTriagle(a, b, c) {
+	if (a < 0 || b < 0 || c < 0) {
+		Swal.fire({
+			position: 'center',
+			icon: 'error',
+			title: 'Vui lòng nhập lại 3 cạnh',
+			showConfirmButton: false,
+			timer: 1500,
+		});
+		setTimeout(() => {
+			document.getElementById('formGuessTriagle').reset();
+		}, 1000);
+		return '';
+	}
+	if (a === b && b === a && a === c) {
+		return `Tam giác đều`;
+	} else if (isIsoscelesTriangle(a, b, c)) {
+		return `Tam giác cân`;
+	} else if (rightTriagle(a, b, c)) {
+		return `Tam giác vuông`;
+	}
+	return `Tam giác khác`;
+}
+document.getElementById('btnGuess').addEventListener('click', e => {
+	e.preventDefault();
+	// Get value form
+	const side01 = +document.getElementById('side01').value;
+	const side02 = +document.getElementById('side02').value;
+	const side03 = +document.getElementById('side03').value;
+	const value = guessTriagle(side01, side02, side03);
+	const result = document.querySelector('.showGuess');
+	result.innerHTML = value;
+	// Reset form
+	setTimeout(() => {
+		document.getElementById('formGuessTriagle').reset();
+		result.innerText = '';
+	}, 5000);
+});
 
 // Exercise 5: Tính ngày tháng năm
 
