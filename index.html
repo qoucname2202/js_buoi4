@@ -420,7 +420,16 @@
 									<li>
 										Xử lý
 										<ul>
-											<li>TH1:</li>
+											<li>
+												TH1: Tam giác đều ➔ Nếu 3 cạnh bằng nhau
+												<span class="text-danger">(a == b == c)</span>
+											</li>
+											<li>TH2: Tam giác cân ➔ Nếu 2 cạnh bằng nhau</li>
+											<li>TH3: Tam giác vuông ➔ Nếu c^2 == b^2 + a^2</li>
+											<li>
+												TH4: Không nằm trong 3 trường hợp trên suy ra
+												<span class="text-danger">tam giác khác</span>
+											</li>
 										</ul>
 									</li>
 									<li>
@@ -504,7 +513,17 @@
 									<li>
 										Xử lý
 										<ul>
-											<li>TH1:</li>
+											<li>Lấy dữ liệu ngày, tháng, năm từ form</li>
+											<li>
+												Nếu người dùng Click chọn
+												<span class="text-danger">Ngày hôm qua</span> thì lấy
+												giá trị ngày trừ đi 1.
+											</li>
+											<li>
+												Ngược lại nếu người dùng Click chọn
+												<span class="text-danger">Ngày mai</span> thì lấy giá
+												trị ngày cộng thêm 1
+											</li>
 										</ul>
 									</li>
 									<li>
@@ -518,7 +537,7 @@
 									</li>
 								</ol>
 							</div>
-							<form id="formCounting">
+							<form id="formCalcDate">
 								<div class="row">
 									<div class="col-12 col-lg-4">
 										<div class="form-group">
@@ -596,18 +615,38 @@
 									<li>
 										Xử lý
 										<ul>
-											<li>TH1:</li>
+											<li>
+												Sử dụng <span class="text-danger">Switch/Case</span>
+											</li>
+											<li>
+												TH1: Những tháng
+												<span class="text-danger">(4, 6, 9, 10)</span> sẽ trả ra
+												giá trị ngày là <span class="text-danger">30</span>
+											</li>
+											<li>
+												TH2: Đối với tháng 2 những năm nhuận sẽ có 29 ngày.
+												<ul>
+													<li>
+														Công thức tính năm nhuận: ( year % 4 & year != 100 )
+														|| year % 400
+													</li>
+												</ul>
+											</li>
+											<li>
+												TH3: Những tháng còn lại sẽ có
+												<span class="text-danger">31</span> ngày
+											</li>
 										</ul>
 									</li>
 									<li>
 										Đầu ra
 										<ul>
-											<li>Hiển thị số ngày theo từng tháng, năm</li>
+											<li>Hiển thị số lượng ngày theo từng tháng và năm</li>
 										</ul>
 									</li>
 								</ol>
 							</div>
-							<form id="formCounting">
+							<form id="formAmountDays">
 								<div class="row">
 									<div class="col-12 col-lg-4">
 										<div class="form-group">
@@ -616,7 +655,7 @@
 												<input
 													autocomplete="off"
 													type="number"
-													id="month"
+													id="months"
 													placeholder="Nhập Tháng"
 												/>
 											</div>
@@ -629,7 +668,7 @@
 												<input
 													autocomplete="off"
 													type="number"
-													id="year"
+													id="years"
 													placeholder="Nhập Năm"
 												/>
 											</div>

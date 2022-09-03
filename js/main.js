@@ -55,7 +55,7 @@ document.getElementById('btnSorting').addEventListener('click', e => {
 	setTimeout(() => {
 		formSorting.reset();
 		result.innerText = '';
-	}, 5000);
+	}, 7000);
 });
 
 // Exercise 2: Greeting program
@@ -98,7 +98,7 @@ document.getElementById('btnIntroduce').addEventListener('click', e => {
 	setTimeout(() => {
 		document.getElementById('formIntroduce').reset();
 		result.innerText = '';
-	}, 5000);
+	}, 7000);
 });
 // Exercise 3: Couting even and odd numbers
 function isEvenOdd(numb) {
@@ -142,7 +142,7 @@ document.getElementById('btnCounting').addEventListener('click', e => {
 	setTimeout(() => {
 		document.getElementById('formCounting').reset();
 		result.innerText = '';
-	}, 5000);
+	}, 7000);
 });
 // Exercise 4: Guess the triagle
 function isIsoscelesTriangle(a, b, c) {
@@ -180,13 +180,13 @@ function guessTriagle(a, b, c) {
 		return '';
 	}
 	if (a === b && b === a && a === c) {
-		return `Tam giác đều`;
+		return `Hình tam giác đều`;
 	} else if (isIsoscelesTriangle(a, b, c)) {
-		return `Tam giác cân`;
+		return `Hình tam giác cân`;
 	} else if (rightTriagle(a, b, c)) {
-		return `Tam giác vuông`;
+		return `Hình tam giác vuông`;
 	}
-	return `Tam giác khác`;
+	return `Hình tam giác khác`;
 }
 document.getElementById('btnGuess').addEventListener('click', e => {
 	e.preventDefault();
@@ -201,13 +201,169 @@ document.getElementById('btnGuess').addEventListener('click', e => {
 	setTimeout(() => {
 		document.getElementById('formGuessTriagle').reset();
 		result.innerText = '';
-	}, 5000);
+	}, 7000);
 });
 
 // Exercise 5: Tính ngày tháng năm
 
+function calcNextDate(day, month, year) {
+	if (day < 0 || month < 0 || year < 0) {
+		Swal.fire({
+			position: 'center',
+			icon: 'error',
+			title: 'Vui lòng nhập lại ngày tháng năm',
+			showConfirmButton: false,
+			timer: 1500,
+		});
+		setTimeout(() => {
+			document.getElementById('formCalcDate').reset();
+		}, 1000);
+		return '';
+	}
+	const now = new Date(`${month}/${day}/${year}`);
+	let nextDay = new Date(now);
+	nextDay.setDate(nextDay.getDate() + 1);
+	const monthNext = nextDay.getMonth() + 1;
+	const dayNext = nextDay.getDate();
+	const yearNext = nextDay.getFullYear();
+	return `${dayNext < 10 ? `0${dayNext}` : dayNext}/${
+		monthNext < 10 ? `0${monthNext}` : monthNext
+	}/${yearNext}`;
+}
+function calcPrevDate(day, month, year) {
+	if (day < 0 || month < 0 || year < 0) {
+		Swal.fire({
+			position: 'center',
+			icon: 'error',
+			title: 'Vui lòng nhập lại ngày tháng năm',
+			showConfirmButton: false,
+			timer: 1500,
+		});
+		setTimeout(() => {
+			document.getElementById('formCalcDate').reset();
+		}, 1000);
+		return '';
+	}
+	const now = new Date(`${month}/${day}/${year}`);
+	let prevDay = new Date(now);
+	prevDay.setDate(prevDay.getDate() - 1);
+	const monthPrev = prevDay.getMonth() + 1;
+	const dayPrev = prevDay.getDate();
+	const yearPrev = prevDay.getFullYear();
+	return `${dayPrev < 10 ? `0${dayPrev}` : dayPrev}/${
+		monthPrev < 10 ? `0${monthPrev}` : monthPrev
+	}/${yearPrev}`;
+}
+
+document.getElementById('btnPrevDate').addEventListener('click', e => {
+	e.preventDefault();
+	const day = +document.getElementById('day').value;
+	const month = +document.getElementById('month').value;
+	const year = +document.getElementById('year').value;
+	const result = document.querySelector('.showDate');
+	const value = calcPrevDate(day, month, year);
+	result.innerHTML = value;
+	setTimeout(() => {
+		document.getElementById('formCalcDate').reset();
+		result.innerHTML = '';
+	}, 7000);
+});
+
+document.getElementById('btnNextDate').addEventListener('click', e => {
+	e.preventDefault();
+	const day = +document.getElementById('day').value;
+	const month = +document.getElementById('month').value;
+	const year = +document.getElementById('year').value;
+	const result = document.querySelector('.showDate');
+	const value = calcNextDate(day, month, year);
+	result.innerHTML = value;
+	setTimeout(() => {
+		document.getElementById('formCalcDate').reset();
+		result.innerHTML = '';
+	}, 7000);
+});
+
 // Exercise 6: Calculate date
 
+function calcDate(month, year) {
+	if (month < 0 || year < 0) {
+		Swal.fire({
+			position: 'center',
+			icon: 'error',
+			title: 'Vui lòng nhập lại tháng năm',
+			showConfirmButton: false,
+			timer: 1500,
+		});
+		setTimeout(() => {
+			document.getElementById('formAmountDays').reset();
+		}, 1500);
+		return '';
+	}
+	switch (month) {
+		case 2:
+			return (year % 4 == 0 && year % 100) || year % 400 == 0 ? 29 : 28;
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			return 30;
+		default:
+			return 31;
+	}
+}
+document.getElementById('btnCalcDay').addEventListener('click', e => {
+	e.preventDefault();
+	const month = +document.getElementById('months').value;
+	const year = +document.getElementById('years').value;
+	const result = document.querySelector('.showDay');
+	const value = calcDate(month, year);
+	result.innerHTML = `Tháng ${month} năm ${year} có ${value} ngày`;
+	setTimeout(() => {
+		document.getElementById('formAmountDays').reset();
+		result.innerHTML = '';
+	}, 7000);
+});
 // Exercise 7: Read number
-
+function DocSo3ChuSo(baso) {
+	var tram;
+	var chuc;
+	var donvi;
+	var KetQua = '';
+	tram = parseInt(baso / 100);
+	chuc = parseInt((baso % 100) / 10);
+	donvi = baso % 10;
+	if (tram == 0 && chuc == 0 && donvi == 0) return '';
+	if (tram != 0) {
+		KetQua += ChuSo[tram] + ' trăm ';
+		if (chuc == 0 && donvi != 0) KetQua += ' linh ';
+	}
+	if (chuc != 0 && chuc != 1) {
+		KetQua += ChuSo[chuc] + ' mươi';
+		if (chuc == 0 && donvi != 0) KetQua = KetQua + ' linh ';
+	}
+	if (chuc == 1) KetQua += ' mười ';
+	switch (donvi) {
+		case 1:
+			if (chuc != 0 && chuc != 1) {
+				KetQua += ' mốt ';
+			} else {
+				KetQua += ChuSo[donvi];
+			}
+			break;
+		case 5:
+			if (chuc == 0) {
+				KetQua += ChuSo[donvi];
+			} else {
+				KetQua += ' lăm ';
+			}
+			break;
+		default:
+			if (donvi != 0) {
+				KetQua += ChuSo[donvi];
+			}
+			break;
+	}
+	return KetQua;
+}
 // Exercise 8: Find the student farthest from the school
+// distanceA = Math.sqrt(Math.pow(x2-x1) + Math.pow(y2-y1))
