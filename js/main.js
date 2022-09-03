@@ -23,7 +23,10 @@ function sorting(a, b, c) {
 			showConfirmButton: false,
 			timer: 1500,
 		});
-		return;
+		setTimeout(() => {
+			document.getElementById('formSorting').reset();
+		}, 1000);
+		return '';
 	}
 	if (a > b && b > c && a > c) {
 		return `${c} < ${b} < ${a}`;
@@ -98,7 +101,49 @@ document.getElementById('btnIntroduce').addEventListener('click', e => {
 	}, 5000);
 });
 // Exercise 3: Couting even and odd numbers
-
+function isEvenOdd(numb) {
+	return numb % 2 === 0 ? true : false;
+}
+document.getElementById('btnCounting').addEventListener('click', e => {
+	e.preventDefault();
+	let countEven = 0;
+	// Get value form
+	const numb1 = +document.getElementById('numb1').value;
+	const numb2 = +document.getElementById('numb2').value;
+	const numb3 = +document.getElementById('numb3').value;
+	// Check validate
+	if (numb1 < 0 || numb2 < 0 || numb3 < 0) {
+		Swal.fire({
+			position: 'center',
+			icon: 'error',
+			title: 'Vui lòng nhập số nguyên bạn nhé',
+			showConfirmButton: false,
+			timer: 1500,
+		});
+		setTimeout(() => {
+			document.getElementById('formCounting').reset();
+		}, 1000);
+		return;
+	}
+	// Couting even number and odd number
+	const result = document.querySelector('.showCounting');
+	if (isEvenOdd(numb1)) {
+		countEven++;
+	}
+	if (isEvenOdd(numb2)) {
+		countEven++;
+	}
+	if (isEvenOdd(numb3)) {
+		countEven++;
+	}
+	let countOdd = 3 - countEven;
+	result.innerHTML = `Số lượng số chẵn ${countEven} - số lẻ ${countOdd}`;
+	// Reset form
+	setTimeout(() => {
+		document.getElementById('formCounting').reset();
+		result.innerText = '';
+	}, 5000);
+});
 // Exercise 4: Guess the triagle
 
 // Exercise 5: Tính ngày tháng năm
