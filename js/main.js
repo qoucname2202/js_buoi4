@@ -400,4 +400,50 @@ document.getElementById('btnReadNumber').addEventListener('click', e => {
 	}, 7000);
 });
 // Exercise 8: Find the student farthest from the school
-// distanceA = Math.sqrt(Math.pow(x2-x1) + Math.pow(y2-y1))
+
+// Compare distance between 3 student
+function compareDistance(a, b, c) {
+	let max = a;
+	if (b > max) {
+		max = b;
+	} else if (c > max) {
+		max = c;
+	}
+	return max;
+}
+// Function calc distance
+function calcDistance(x1, y1, x2, y2) {
+	return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+}
+document.getElementById('btnFindDistance').addEventListener('click', e => {
+	e.preventDefault();
+	const result = document.querySelector('.showFind');
+	// Get coordinates student 01
+	const txtStudent1 = document.getElementById('name1').value;
+	const x01 = +document.getElementById('x1').value;
+	const y01 = +document.getElementById('y1').value;
+	// Get coordinates student 01
+	const txtStudent2 = document.getElementById('name2').value;
+	const x2 = +document.getElementById('x2').value;
+	const y2 = +document.getElementById('y2').value;
+	// Get coordinates student 01
+	const txtStudent3 = document.getElementById('name3').value;
+	const x3 = +document.getElementById('x3').value;
+	const y3 = +document.getElementById('y3').value;
+	// Get coordinates student 01
+	const xS = +document.getElementById('schoolX').value;
+	const yS = +document.getElementById('schoolY').value;
+	// Calc
+	const disStudent1 = calcDistance(x01, y01, xS, yS);
+	const disStudent2 = calcDistance(x2, y2, xS, yS);
+	const disStudent3 = calcDistance(x3, y3, xS, yS);
+	// Compare
+	const valueMax = compareDistance(disStudent1, disStudent2, disStudent3);
+	if (valueMax === disStudent1) {
+		result.innerHTML = `Sinh viên xa trường nhất là: ${txtStudent1}`;
+	} else if (valueMax === disStudent2) {
+		result.innerHTML = `Sinh viên xa trường nhất là: ${txtStudent2}`;
+	} else {
+		result.innerHTML = `Sinh viên xa trường nhất là: ${txtStudent3}`;
+	}
+});

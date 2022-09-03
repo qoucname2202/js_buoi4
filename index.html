@@ -786,13 +786,35 @@
 									<li>
 										Đầu vào
 										<ul>
-											<li>Nhập vào</li>
+											<li>
+												Nhập vào tọa độ tên và tọa độ của từng sinh viên và tọa
+												độ trường
+											</li>
 										</ul>
 									</li>
 									<li>
 										Xử lý
 										<ul>
-											<li>TH1:</li>
+											<li>
+												Lấy tọa độ của từng sinh viên và tọa đọ trường từ form
+											</li>
+											<li>
+												Áp dụng công thức tính khoảng cách:
+												<span class="text-danger"
+													>Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2</span
+												>
+											</li>
+											<li>
+												So sánh
+												<span class="text-danger"
+													>tìm khoảng cách lớn nhất</span
+												>
+												trong 3 khoảng cách từ nhà sinh viên đến trường
+											</li>
+											<li>
+												Sau khi tìm được khoảng cách lớn nhất đem so sánh với
+												khoảng cách của từng sinh viên.
+											</li>
 										</ul>
 									</li>
 									<li>
@@ -803,7 +825,7 @@
 									</li>
 								</ol>
 							</div>
-							<form id="formCounting">
+							<form id="formFindDistance">
 								<!-- First student coordinates -->
 								<div class="row">
 									<div class="col-12 mb-3">
@@ -816,7 +838,7 @@
 												<label for="name1">Tên sinh viên</label>
 												<input
 													autocomplete="off"
-													type="number"
+													type="text"
 													id="name1"
 													placeholder="Nhập tên"
 												/>
@@ -862,7 +884,7 @@
 												<label for="name2">Tên sinh viên</label>
 												<input
 													autocomplete="off"
-													type="number"
+													type="text"
 													id="name2"
 													placeholder="Nhập tên"
 												/>
@@ -908,7 +930,7 @@
 												<label for="name3">Tên sinh viên</label>
 												<input
 													autocomplete="off"
-													type="number"
+													type="text"
 													id="name3"
 													placeholder="Nhập tên"
 												/>
