@@ -56,7 +56,47 @@ document.getElementById('btnSorting').addEventListener('click', e => {
 });
 
 // Exercise 2: Greeting program
-
+function introduce(str) {
+	switch (str) {
+		case 'father': {
+			return `Xin chào Cha!`;
+		}
+		case 'mother': {
+			return `Xin chào Mẹ!`;
+		}
+		case 'brother': {
+			return `Xin chào Anh Trai!`;
+		}
+		case 'sister': {
+			return `Xin chào Em Gái!`;
+		}
+		default:
+			{
+				Swal.fire({
+					position: 'center',
+					icon: 'error',
+					title: 'Vui lòng chọn thành viên',
+					showConfirmButton: false,
+					timer: 1500,
+				});
+			}
+			return '';
+	}
+}
+document.getElementById('btnIntroduce').addEventListener('click', e => {
+	e.preventDefault();
+	// Get value
+	const value = document.getElementById('formSelected').value;
+	const result = document.querySelector('.showInstroduce');
+	// Print introduce
+	const name = introduce(value);
+	result.innerHTML = name;
+	// Reset form
+	setTimeout(() => {
+		document.getElementById('formIntroduce').reset();
+		result.innerText = '';
+	}, 5000);
+});
 // Exercise 3: Couting even and odd numbers
 
 // Exercise 4: Guess the triagle
