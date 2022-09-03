@@ -324,46 +324,80 @@ document.getElementById('btnCalcDay').addEventListener('click', e => {
 	}, 7000);
 });
 // Exercise 7: Read number
-function DocSo3ChuSo(baso) {
-	var tram;
-	var chuc;
-	var donvi;
-	var KetQua = '';
-	tram = parseInt(baso / 100);
-	chuc = parseInt((baso % 100) / 10);
-	donvi = baso % 10;
-	if (tram == 0 && chuc == 0 && donvi == 0) return '';
-	if (tram != 0) {
-		KetQua += ChuSo[tram] + ' trăm ';
-		if (chuc == 0 && donvi != 0) KetQua += ' linh ';
+function readNumber(numb) {
+	// Validation numb 3 digit
+	if (numb < 100 || numb >= 1000) {
+		Swal.fire({
+			position: 'center',
+			icon: 'error',
+			title: 'Vui lòng nhập lại số',
+			showConfirmButton: false,
+			timer: 1500,
+		});
+		setTimeout(() => {
+			document.getElementById('formReadNumber').reset();
+		}, 1500);
+		return '';
 	}
-	if (chuc != 0 && chuc != 1) {
-		KetQua += ChuSo[chuc] + ' mươi';
-		if (chuc == 0 && donvi != 0) KetQua = KetQua + ' linh ';
+	const numbList = [
+		'không',
+		'một',
+		'hai',
+		'ba',
+		'bốn',
+		'năm',
+		'sáu',
+		'bảy',
+		'tám',
+		'chín',
+	];
+	let result = '';
+	let tram = parseInt(numb / 100);
+	let chuc = parseInt((numb % 100) / 10);
+	let donvi = numb % 10;
+	if (tram === 0 && chuc === 0 && donvi === 0) return '';
+	if (tram !== 0) {
+		result += numbList[tram] + ' trăm ';
+		if (chuc === 0 && donvi !== 0) result += ' linh ';
 	}
-	if (chuc == 1) KetQua += ' mười ';
+	if (chuc !== 0 && chuc !== 1) {
+		result += numbList[chuc] + ' mươi';
+		if (chuc === 0 && donvi !== 0) result += ' linh ';
+	}
+	if (chuc === 1) result += ' mười ';
 	switch (donvi) {
 		case 1:
-			if (chuc != 0 && chuc != 1) {
-				KetQua += ' mốt ';
+			if (chuc !== 0 && chuc !== 1) {
+				result += ' mốt ';
 			} else {
-				KetQua += ChuSo[donvi];
+				result += numbList[donvi];
 			}
 			break;
 		case 5:
-			if (chuc == 0) {
-				KetQua += ChuSo[donvi];
+			if (chuc === 0) {
+				result += numbList[donvi];
 			} else {
-				KetQua += ' lăm ';
+				result += ' lăm ';
 			}
 			break;
 		default:
-			if (donvi != 0) {
-				KetQua += ChuSo[donvi];
+			if (donvi !== 0) {
+				result += numbList[donvi];
 			}
 			break;
 	}
-	return KetQua;
+	return result;
 }
+document.getElementById('btnReadNumber').addEventListener('click', e => {
+	e.preventDefault();
+	const result = document.querySelector('.showReadNumber');
+	const numb = +document.getElementById('readNumb').value;
+	const value = readNumber(numb);
+	result.innerHTML = value;
+	setTimeout(() => {
+		document.getElementById('formReadNumber').reset();
+		result.innerHTML = '';
+	}, 7000);
+});
 // Exercise 8: Find the student farthest from the school
 // distanceA = Math.sqrt(Math.pow(x2-x1) + Math.pow(y2-y1))

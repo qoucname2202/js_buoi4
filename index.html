@@ -700,33 +700,61 @@
 									<li>
 										Đầu vào
 										<ul>
-											<li>Nhập vào 3 số</li>
+											<li>Nhập vào số có 3 chữ số</li>
 										</ul>
 									</li>
 									<li>
 										Xử lý
 										<ul>
-											<li>TH1:</li>
+											<li>Lấy số theo từng hàng phần trăm, chục, đơn vị</li>
+											<li>
+												Nếu
+												<span class="text-danger"
+													>(hangTram == hangChuc == hangDv)</span
+												>
+												Yêu cầu người dùng nhập lại
+											</li>
+											<li>
+												Nếu <span class="text-danger">(hangTram != 0)</span>và
+												nếu
+												<span class="text-danger"
+													>(hangChuc == 0 & hangDv != 0)</span
+												>
+												nối chuỗi với
+												<span class="text-danger">linh</span>
+											</li>
+											<li>
+												Nếu
+												<span class="text-danger"
+													>(hangChuc != 0 & hangChuc != 1)</span
+												>
+												thì nối chuỗi với <span class="text-danger">mươi</span>
+											</li>
+											<li>
+												Nếu <span class="text-danger">(hangChuc == 1)</span>nối
+												chuỗi với
+												<span class="text-danger"> mười</span>
+											</li>
 										</ul>
 									</li>
 									<li>
 										Đầu ra
 										<ul>
-											<li>Hiển thị các đoc số nguyên vừa nhập</li>
+											<li>Hiển thị cách đoc số nguyên vừa nhập</li>
 										</ul>
 									</li>
 								</ol>
 							</div>
-							<form id="formCounting">
+							<form id="formReadNumber">
 								<div class="row">
 									<div class="col-12 col-lg-6">
 										<div class="form-group">
 											<div class="text-field">
-												<label for="numb">Số nguyên</label>
+												<label for="readNumb">Số nguyên</label>
 												<input
 													autocomplete="off"
 													type="number"
-													id="numb"
+													id="readNumb"
 													placeholder="Nhập số 3 chữ số"
 												/>
 											</div>
